@@ -1,7 +1,16 @@
 
+name: Vehicle Parking Calculator Maven Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
 jobs:
   maven-test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -13,13 +22,10 @@ jobs:
           java-version: '17'
           cache: maven
 
-      - name: Set up Chrome
-        uses: browser-actions/setup-chrome@v1
-
-      - name: Verify Java and Chrome
+      - name: Verify Java and Maven
         run: |
           java -version
-          google-chrome --version
+          mvn -version
 
       - name: Run Maven tests
         run: mvn clean test
