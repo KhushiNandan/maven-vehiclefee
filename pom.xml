@@ -1,4 +1,3 @@
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
@@ -17,7 +16,6 @@
     </properties>
 
     <dependencies>
-
         <!-- JUnit 5 dependency -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -25,7 +23,6 @@
             <version>5.10.2</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -38,29 +35,28 @@
                 <version>3.13.0</version>
             </plugin>
 
-            <!-- Maven Surefire Plugin for JUnit 5 -->
+            <!-- Maven Surefire Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
             </plugin>
-            <!-- Maven JAR Plugin to specify the main class -->
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-jar-plugin</artifactId>
-    <version>3.4.2</version>
-    <configuration>
-        <archive>
-            <manifest>
-                <mainClass>com.example.ParkingFeeCalculator</mainClass>
-            </manifest>
-        </archive>
-    </configuration>
-</plugin>
+
+            <!-- Maven JAR Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.example.khushi.ParkingFeeCalculator</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
 
         </plugins>
     </build>
 
 </project>
-
-
